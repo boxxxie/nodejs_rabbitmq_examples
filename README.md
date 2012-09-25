@@ -1,6 +1,16 @@
 Node.js MQ Examples
 ==================
 
+Running the examples
+====================
+you may find it convenient to run the two programs in different consoles.
+````
+cd ampq
+[sudo] npm install
+node pub.js
+node sub.js
+[manually kill process]
+````
 Queue Types
 ===========
 Durable
