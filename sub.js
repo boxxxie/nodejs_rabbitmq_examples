@@ -1,9 +1,11 @@
 var amqp = require('amqp'); 
+var _ = require('underscore');
 
 var queue_name="test";
 var temp_queue_name="temp";
 
 var url =  "amqp://54.243.197.131:5672"; // default to EC2 host
+//var url="amqp://72.51.30.10:5672";
 
 // dispatching on message elements
 function  action(message,headers,delivery_info){
