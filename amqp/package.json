@@ -1,0 +1,12 @@
+{
+  "author": "Paul Iannazzo <somethingitalian@gmail.com>",
+  "name": "nodejs-amqp-module-example",
+  "description": "Example project showing how to exchange messages with rabbitMQ/AMQP with Node amqp module",
+  "version": "0.0.1",
+  "repository": {
+    "url": ""
+  },
+  "dependencies": { 
+    "amqp":">= 0.1.3"
+  }
+}
