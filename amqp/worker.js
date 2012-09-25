@@ -13,6 +13,10 @@ function  action(message,headers,delivery_info){
     console.log('display',message);
   }
   else if(message.action){
+    _.chain(9999999)
+      .range()
+      .map(_.identity)
+      .value()
     console.log('action',message);
   }
   else{
@@ -42,6 +46,8 @@ function sub_temp(conn,queue_name) {
   }
 }
 
-var conn = amqp.createConnection({url: url}); // create the connection
-conn.on('ready',sub(conn,queue_name))
-conn.on('ready',sub_temp(conn,temp_queue_name));
+_.chain(20).range().each(function(){
+  var conn = amqp.createConnection({url: url}); // create the connection
+  conn.on('ready',sub(conn,queue_name));
+  conn.on('ready',sub_temp(conn,temp_queue_name));
+})
