@@ -6,7 +6,7 @@ AMQP Module
 
 PUB
 ---
-Publishes thousands of messages total. Messages are sent to 'test' (durable queue that is manually created via rabbitMQ web UI). 2 messages are sent to 'temp' (transient queue created by the PUB or SUB program, depending on which connects to rabbitMQ first). The defaultExchange is set to '' so that we can publish messages directly to the connection without asking for an exchange. On the connection ready event we create the temp queue via the ````conn.queue```` command, default queue options are used which makes a transient queue that will be killed once all connections are closed to it.
+Publishes thousands of messages total. Messages are sent to 'test' (durable queue that is manually created via rabbitMQ web UI) and to 'temp' (transient queue created by the PUB or SUB program, depending on which connects to rabbitMQ first). The defaultExchange is set to '' so that we can publish messages directly to the connection without asking for an exchange. On the connection ready event we create the temp queue via the ````conn.queue```` command, default queue options are used which makes a transient queue that will be killed once all connections are closed to it.
 
 SUB
 ---
