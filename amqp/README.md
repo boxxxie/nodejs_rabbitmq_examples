@@ -14,4 +14,4 @@ Subscribes to 2 queues on the same connection, one being durable and one being t
 
 WORKER
 ------
-The worker is much like the sub, except it has some mock blocking task that is applied to messages with a ````.action```` key. The worker also opens up many connections to rabbitMQ to simulate parellel workers.
+The main difference in the worker is that it sends acknowledgments of completed tasks back to rabbitMQ via the ````queue.shift()```` function. RabbitMQ will reassign messages from dead workers who haven't sent back an acknowledgement. ````queue.subscribe({ack:true}...)```` needs to be set for this functionality to work. The worker also opens up many connections to rabbitMQ to simulate parellel workers.
