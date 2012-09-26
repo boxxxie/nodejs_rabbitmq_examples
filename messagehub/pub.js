@@ -7,9 +7,8 @@ var host =  "54.243.197.131"; // default to EC2 host
 
 var hub = messagehub(host,channel); // create the connection
 
-_.chain(99)
-  .range()
-  .each(function(){
-    hub.emit('message.name'
-             ,{display: _.uniqueId() + ' Hello World!'})
-  });
+_.times(99,
+        function(){
+          hub.emit('message.name'
+                   ,{display: _.uniqueId() + ' Hello World!'})
+        });

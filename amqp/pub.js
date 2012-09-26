@@ -10,12 +10,11 @@ function pub(conn,queue_name) {
   return function(){
     // publish a message on the default exchange
     // does not require to match options with queue
-    _.chain(999999)
-      .range()
-      .each(function(){
-        conn.publish(queue_name,{display: _.uniqueId() + ' Hello World!'});
-        conn.publish(queue_name,{action: _.uniqueId() + ' Hello World again!'})
-      });
+    _.times(99999,
+            function(){
+              conn.publish(queue_name,{display: _.uniqueId() + ' Hello World!'});
+              conn.publish(queue_name,{action: _.uniqueId() + ' Hello World again!'})
+            });
     //the above will build up in the queue and all get executed in the
     //subcriber program
   }; 
